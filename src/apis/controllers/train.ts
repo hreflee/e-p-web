@@ -1,5 +1,5 @@
 import Router from "koa-router";
-import {DataDAO, MethodDAO, TrainRecordDAO} from "../models";
+import {DataDAO, MethodDAO, TrainRecordDAO} from "../../models";
 import {GetTrainResponse} from "../types/train";
 import {TrainRecordDAO2TrainItem} from "../../utils/TypeTrainsfers";
 

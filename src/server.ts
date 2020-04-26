@@ -7,6 +7,7 @@ import * as path from "path";
 import {DataRouter} from "./apis/controllers/data";
 import {MethodRouter} from "./apis/controllers/method";
 import {TrainRouter} from "./apis/controllers/train";
+import {fetchMethods} from "./services/ModelService";
 
 const app:Koa = new Koa();
 
@@ -41,5 +42,7 @@ app.use(MethodRouter.routes());
 app.use(TrainRouter.routes());
 
 app.listen(3000);
+
+fetchMethods();
 
 console.log("Server running on http://localhost:8080");

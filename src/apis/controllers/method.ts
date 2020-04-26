@@ -1,5 +1,5 @@
 import Router from "koa-router";
-import {MethodDAO} from "../models";
+import {MethodDAO} from "../../models";
 import {GetMethodResponse} from "../types/method";
 
 const MethodRouter = new Router({prefix: '/method'});

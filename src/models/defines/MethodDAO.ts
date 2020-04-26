@@ -1,4 +1,4 @@
-import {Table, Column, Model, HasMany} from 'sequelize-typescript'
+import {Table, Column, Model, HasMany, Unique} from 'sequelize-typescript'
 import TrainRecordDAO from "./TrainRecordDAO";
 
 @Table
@@ -9,11 +9,12 @@ export default class MethodDAO extends Model<MethodDAO>{
     })
     id: number;
 
-    @Column
+    @Column({unique: true})
     name: string;
 
-    @HasMany(() => TrainRecordDAO)
-    trains: TrainRecordDAO[]
+    @Column
+    define: string;
 
-    //TODO: other attrs
+    @HasMany(() => TrainRecordDAO)
+    trains: TrainRecordDAO[];
 }

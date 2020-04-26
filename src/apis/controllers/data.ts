@@ -8,7 +8,7 @@ import {
     PostDataRequest,
     PostDataResponse
 } from "../types/data";
-import {DataDAO, TrainRecordDAO} from "../models";
+import {DataDAO} from "../../models";
 import {DataDAO2DataItem} from "../../utils/TypeTrainsfers";
 
 const promisedParseCSV = (path: string) => {

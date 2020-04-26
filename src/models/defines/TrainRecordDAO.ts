@@ -3,7 +3,7 @@ import DataDAO from "./DataDAO";
 import MethodDAO from "./MethodDAO";
 import moment, {Moment} from "moment";
 import {WhereAttributeHash} from "sequelize";
-import {TrainStatus} from "../../types/train";
+import {TrainStatus} from "../../apis/types/train";
 
 
 @Table

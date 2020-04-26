@@ -5,4 +5,5 @@ export interface GetMethodResponse {
 export interface MethodItem {
     id: number;
     name: string;
+    define:string;
 }
