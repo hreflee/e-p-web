@@ -11,7 +11,6 @@ export interface TrainItem {
     id: number;
     method: MethodItem;
     data: DataItem;
-    selectedAttrs: string[];
     status: TrainStatus;
     MAPE: number | null;
     RMSE: number | null;

@@ -19,12 +19,3 @@ export interface PostDataResponse {
     information?: string,
     dataItem?: DataItem
 }
-
-// get last selected field of a data field
-export interface GetLastSelectedAttrsRequest {
-    dataId: number
-}
-export interface GetLastSelectedAttrsResponse {
-    allAttrs: string[]
-    lastAttrs: string[]
-}

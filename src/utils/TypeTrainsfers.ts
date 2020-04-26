@@ -1,15 +1,15 @@
 import {DataDAO, MethodDAO, TrainRecordDAO} from "../apis/models";
 import {DataItem} from "../apis/types/data";
 import moment, {Moment} from "moment";
+import {TrainItem} from "../apis/types/train";
 
-export const TrainRecordDAO2TrainItem = (item:TrainRecordDAO) => {
-    const {id, method, data, selectedAttrs, status, MAPE, RMSE, submitAt, completeAt} = item;
+export const TrainRecordDAO2TrainItem = (item:TrainRecordDAO):TrainItem => {
+    const {id, method, data, status, MAPE, RMSE, submitAt, completeAt} = item;
     console.log(submitAt instanceof moment);
     return {
         id,
         method: MethodDAO2MethodItem(method),
         data: DataDAO2DataItem(data),
-        selectedAttrs,
         status,
         MAPE,
         RMSE,

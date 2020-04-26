@@ -5,7 +5,6 @@ import fs from 'fs';
 import {
     DataItem,
     GetDataResponse,
-    GetLastSelectedAttrsResponse,
     PostDataRequest,
     PostDataResponse
 } from "../types/data";
@@ -51,7 +50,6 @@ DataRouter.post('/', async (ctx) => {
             fileName,
             path: filePath,
             recordNum: csvContent.length - 1,
-            attributes: csvContent[0]
         });
         ctx.body = <PostDataResponse>{
             success: true,
@@ -65,16 +63,6 @@ DataRouter.post('/', async (ctx) => {
         };
         console.error(e);
     }
-});
-
-DataRouter.get('/lastSelectedAttrs', async (ctx) => {
-    const dataId = parseInt(ctx.query.dataId);
-    const trainRecord = await TrainRecordDAO.findLastSelectedAttrsBy({dataId});
-    const fileRecord:DataDAO = await DataDAO.findOne({where: {id: dataId}});
-    ctx.body = <GetLastSelectedAttrsResponse>{
-        allAttrs: fileRecord.attributes,
-        lastAttrs: trainRecord ? trainRecord.selectedAttrs : []
-    };
 });
 
 export {DataRouter};

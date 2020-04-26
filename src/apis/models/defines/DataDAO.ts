@@ -19,16 +19,6 @@ export default class DataDAO extends Model<DataDAO>{
     @Column
     recordNum: number;
 
-    @Column(DataType.STRING)
-    get attributes(): string[] {
-        // @ts-ignore
-        return JSON.parse(this.getDataValue('attributes'));
-    }
-    set attributes(attrs) {
-        // @ts-ignore
-        this.setDataValue('attributes', JSON.stringify(attrs));
-    }
-
     @CreatedAt
     @Column(DataType.DATE)
     get uploadAt(): Moment {

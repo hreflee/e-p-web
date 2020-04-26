@@ -40,16 +40,6 @@ export default class TrainRecordDAO extends Model<TrainRecordDAO>{
     })
     status: TrainStatus;
 
-    @Column(DataType.STRING)
-    get selectedAttrs() : string[] {
-        // @ts-ignore
-        return JSON.parse(this.getDataValue('selectedAttrs')) as string[]
-    }
-    set selectedAttrs(value: string[]) {
-        // @ts-ignore
-        this.setDataValue('selectedAttrs', JSON.stringify(value));
-    }
-
     @Column(DataType.FLOAT)
     MAPE: number;
 
@@ -72,12 +62,5 @@ export default class TrainRecordDAO extends Model<TrainRecordDAO>{
     set completeAt(date:Date): void {
         // @ts-ignore
         this.setDataValue('completeAt', date);
-    }
-
-    public static findLastSelectedAttrsBy(constrains:object):TrainRecordDAO {
-        return TrainRecordDAO.findOne({
-            order: [['submitAt', 'DESC']],
-            where: constrains as WhereAttributeHash
-        })
     }
 }

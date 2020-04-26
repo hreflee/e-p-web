@@ -2,7 +2,7 @@ export interface GetMethodResponse {
     methods: MethodItem[]
 }
 
-export class MethodItem {
+export interface MethodItem {
     id: number;
     name: string;
 }
