@@ -102,3 +102,10 @@ dist
 
 # TernJS port file
 .tern-port
+
+.idea/
+src/config/secret-config.ts
+
+# server create files
+upload/
+train_output/
